@@ -16,7 +16,7 @@ gulp.task('concatInterface', function() {
 });
 
 gulp.task('jsBrowserify', function() {
-  return browserify({ entries: ['./js/doctorlookup-interface.js'] })
+  return browserify({ entries: ['./js/doctor-lookup-interface.js'] })
     .bundle()
     .pipe(source('app.js'))
     .pipe(gulp.dest('./build/js'));

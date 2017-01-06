@@ -1,0 +1,21 @@
+{
+  "name": "doctor-lookup",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Anthony Bottemiller <anthonybottemiller@outlook.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1"
+  }
+}
