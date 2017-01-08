@@ -14,12 +14,15 @@ doctor.prototype.getLastName = function() {
 };
 
 doctor.prototype.getDoctors = function(medicalIssue) {
-    console.log("Works so far!");
+
+    $("ul#found-doctors").empty()
+
     $.get("https://api.betterdoctor.com/2016-03-01/doctors?query=" + medicalIssue + "&location=45.5231%2C-122.6765%2C%205&user_location=45.5231%2C-122.6765&skip=0&limit=20&user_key=" + apiKey)
     .then(function(result) {
       var doctors = [];
       if (result.data.length === 0){
           console.log("result empty");
+          $("ul#found-doctors").append("<li>Your search did not return any results!</li>");
       }
 
       else {
@@ -29,6 +32,7 @@ doctor.prototype.getDoctors = function(medicalIssue) {
           return doctors;
         });
       }
+      
         doctors.forEach(function(doctor) {
           $("ul#found-doctors").append("<li>" + doctor.getFirstName() + " " + doctor.getLastName() + "</li>");
         });
